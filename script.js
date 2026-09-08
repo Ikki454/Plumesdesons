@@ -1,9 +1,8 @@
 // --- Source de contenu -------------------------------------------------
-// Une fois le projet Sanity créé (voir studio/ et CLAUDE.md), remplacez la
-// valeur ci-dessous par votre Project ID (sanity.io/manage → votre projet).
-// Tant qu'elle vaut "REMPLACER_PAR_VOTRE_PROJECT_ID", le site continue de
-// lire data.json comme avant — rien ne casse en attendant la migration.
-const SANITY_PROJECT_ID = "REMPLACER_PAR_VOTRE_PROJECT_ID";
+// Le contenu (créations, événements) est géré depuis le Sanity Studio
+// (dossier studio/, voir CLAUDE.md) plutôt que dans data.json à la main.
+// data.json reste en secours automatique si Sanity est injoignable.
+const SANITY_PROJECT_ID = "0udv7977";
 const SANITY_DATASET = "production";
 
 async function loadData() {

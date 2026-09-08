@@ -9,7 +9,7 @@ export default defineConfig({
 
   // Rempli automatiquement depuis .env (voir .env.example) une fois le
   // projet créé sur sanity.io/manage.
-  projectId: process.env.SANITY_STUDIO_PROJECT_ID || 'REMPLACER_PAR_VOTRE_PROJECT_ID',
+  projectId: process.env.SANITY_STUDIO_PROJECT_ID || '0udv7977',
   dataset: process.env.SANITY_STUDIO_DATASET || 'production',
 
   plugins: [structureTool(), visionTool()],

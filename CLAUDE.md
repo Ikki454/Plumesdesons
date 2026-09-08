@@ -79,17 +79,20 @@ identifiants en clair — supprimés de `data.json`).
 - Le site (`script.js`) lit le contenu public via l'API CDN de Sanity
   (`https://<projectId>.apicdn.sanity.io/...`), sans authentification requise
   côté site (dataset public en lecture).
-- Tant que `SANITY_PROJECT_ID` (en haut de `script.js`) vaut
-  `"REMPLACER_PAR_VOTRE_PROJECT_ID"`, le site continue de lire `data.json`
-  automatiquement — aucun risque de casser le site en configurant Sanity.
-- Mise en route (une fois le projet Sanity créé, voir le message accompagnant
-  ces fichiers) : remplir `studio/.env` à partir de `.env.example`, lancer
-  `migrate-to-sanity.mjs` pour importer le contenu existant, mettre à jour
-  `SANITY_PROJECT_ID` dans `script.js`, puis `npm run deploy` dans `studio/`
-  pour publier le Studio.
+- **État actuel : migration effectuée.** Projet Sanity `0udv7977` (dataset
+  `production`), `SANITY_PROJECT_ID` dans `script.js` et `studio/sanity.config.js`
+  déjà renseigné, les 3 créations et 3 événements de `data.json` sont importés
+  dans Sanity avec leurs images. Le site public lit désormais Sanity en premier
+  et ne retombe sur `data.json` qu'en cas d'indisponibilité de Sanity.
+- Seule étape restante : publier le Studio pour que Nathalie & Nathalie puissent
+  éditer le contenu. Depuis un terminal réel (pas depuis un environnement Claude
+  sandboxé, qui n'a pas accès réseau à sanity.io) : `cd studio && npm install`
+  puis `npm run deploy` (choisir un nom d'hébergement Studio si demandé, ex.
+  `plumesdesons`). L'URL du Studio est alors `https://<nom-choisi>.sanity.studio`.
 - Édition du contenu au quotidien : Nathalie & Nathalie se connectent au
-  Studio déployé (URL fournie après `sanity deploy`) avec leur compte Sanity —
-  plus besoin du login maison.
+  Studio déployé (URL obtenue après `npm run deploy`) avec un compte Sanity
+  (à inviter depuis sanity.io/manage → Plumedesons → Members) — plus besoin
+  du login maison.
 
 ## Règles pour les prochaines sessions
 
