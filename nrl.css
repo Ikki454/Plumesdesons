@@ -13,13 +13,13 @@ section {
     height: auto;
 
     border-radius: 15px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.39);
+    box-shadow: 0 4px 8px var(--shadow-strong);
 }
 
 .video {
     max-width: 100%;
     height: auto;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.39);
+    box-shadow: 0 4px 8px var(--shadow-strong);
 }
 
 .past_event_container {
@@ -42,7 +42,8 @@ section {
     justify-content: space-between;
     align-items: bottom;
 
-    background-color: aqua;
+    background-color: var(--bone-deep);
+    border-left: 4px solid var(--rose);
     margin-top: 30px;
     padding: 15px;
     padding-left: 20px;

@@ -5,7 +5,21 @@
     height: 90vh;
 }
 
+.section_accueil {
+    position: relative;
+}
+
+.section_accueil::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(65% 62% at 50% 52%, rgba(247, 241, 228, 0.86) 0%, rgba(247, 241, 228, 0.5) 60%, rgba(247, 241, 228, 0) 82%);
+    pointer-events: none;
+}
+
 .section_accueil div{
+    position: relative;
+    z-index: 1;
     display: flex;
     flex-direction: column;
     gap: 20px;
@@ -13,10 +27,10 @@
 
 .section_accueil h1{
     font-size: 10em;
-    font-weight: bold;
+    font-weight: 400;
 }
 
-.btn-video { 
+.btn-video {
     gap: 20px;
 }
 
@@ -29,24 +43,24 @@
 }
 
 .section_a_propos {
-    background-color: aliceblue;
+    background-color: var(--bone-deep);
 }
 
 .a-propos_stats {
     display: flex;
     justify-content: center;
-    
+
     margin-top: 30px;
     gap: 10px;
 }
 
 .a-propos_stats div {
-    background-color:rgb(189, 231, 255);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: var(--moss-tint);
+    box-shadow: 0 4px 8px var(--shadow);
     border-radius: 10px;
 
     width: 220px;
-    
+
     padding-left: 40px;
     padding-right: 40px;
     padding-top: 20px;
@@ -54,16 +68,16 @@
 }
 
 .a-propos_stats div:first-of-type {
-    background-color:rgb(255, 195, 195);
+    background-color: var(--rose-tint);
 }
 
 .a-propos_stats div p {
     text-align: center;
-    color:blue;
+    color: var(--moss-deep);
 }
 
 .a-propos_stats div:first-of-type p {
-    color: red;
+    color: var(--rose-deep);
 }
 
 .grid_section {
@@ -88,17 +102,18 @@
     flex-direction: column;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     place-items: center;
-    
+
     width: 350px;
     height: 500px;
     gap: 10px;
     border-radius: 20px;
-    background-color: white;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    background-color: var(--cream-card);
+    box-shadow: 0 4px 8px var(--shadow-strong);
 }
 
 .grid_cell:hover {
-    transform: scale(1.05);
+    transform: translateY(-8px);
+    box-shadow: 0 14px 26px var(--shadow-strong);
 }
 
 .grid_cell img {
@@ -125,7 +140,7 @@
 }
 
 .grid_cell_date_type div {
-    background-color: rgb(255, 190, 255);
+    background-color: var(--ochre-tint);
     border-radius: 15px;
 
     padding-left: 10px;
@@ -151,8 +166,8 @@
 
     padding: 20px;
     border-radius: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
-    background-color: rgb(253, 172, 158);
+    box-shadow: 0 4px 8px var(--shadow-strong);
+    background-color: var(--bone-deep);
 }
 
 .future_events > div:first-of-type {
@@ -166,7 +181,7 @@
     border-radius: 30px;
     font-size: 18px;
     font-weight: bold;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 8px var(--shadow);
 }
 
 .f_e_info {
@@ -176,38 +191,38 @@
 
 .event1,
 .event4 {
-    background-color: rgb(255, 217, 217);
+    background-color: var(--rose-tint);
 }
 
 .event1 button,
 .event4 button {
-    background-color: rgb(235, 78, 143);
+    background-color: var(--rose-deep);
 }
 
 .event2,
 .event5 {
-    background-color: rgb(210, 218, 255);
+    background-color: var(--ochre-tint);
 }
 
 .event2 button,
 .event5 button {
-    background-color: rgb(80, 169, 252);
+    background-color: var(--ochre-deep);
 }
 
 .event3,
 .event6 {
-    background-color: rgb(223, 255, 231);
+    background-color: var(--moss-tint);
 }
 
 .event3 button,
 .event6 button {
-    background-color: rgb(73, 226, 68);
+    background-color: var(--moss-deep);
 }
 
 .section_actualite {
     flex-direction: column;
     align-items: center;
-    background-color: aliceblue;
+    background-color: var(--bone-deep);
 }
 
 .section_actualite .display_p_text {

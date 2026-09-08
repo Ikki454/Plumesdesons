@@ -1,22 +1,10 @@
-{ 
+{
     "login": [
         {
             "login_state": 0,
             "isLog": false,
             "logId": 0,
             "mail": "",
-            "isAdmin": false
-        },
-        {
-            "id": "admin",
-            "mdp": "admin123",
-            "mail": "admin@example.com",
-            "isAdmin": true
-        },
-        {
-            "id": "client",
-            "mdp": "client123",
-            "mail": "client@example.com",
             "isAdmin": false
         }
     ],
@@ -27,7 +15,7 @@
             "image_alt": "image",
             "title": "Où est ma main",
             "description": "Découvrer le périple de Mr Pouce à la recherche de ses amis, les autres doigts de la main",
-            "annee" : 2023,
+            "annee": 2023,
             "type": "spectacle musical"
         },
         {
@@ -36,7 +24,7 @@
             "image_alt": "image",
             "title": "Noël au rythme des lutins",
             "description": "Spectacle musical et sensoriel imaginé et créé de toutes pièces par Les Plumes de Sons",
-            "annee" : 2025,
+            "annee": 2025,
             "type": "spectacle musical"
         },
         {
@@ -45,7 +33,7 @@
             "image_alt": "image",
             "title": "???",
             "description": "En Création",
-            "annee" : 2026,
+            "annee": 2026,
             "type": "spectacle musical"
         }
     ],

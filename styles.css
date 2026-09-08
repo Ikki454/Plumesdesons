@@ -1,3 +1,29 @@
+:root {
+    /* Duvet Sonore -- brand tokens (see CLAUDE.md) */
+    --bone: #F7F1E4;
+    --bone-deep: #EFE4D2;
+    --cream-card: #FFFDF8;
+    --header-bg: #F1E3D3;
+
+    --ink: #2E2822;
+    --ink-soft: #5B5247;
+
+    --rose: #CE8874;
+    --rose-deep: #B06B57;
+    --rose-tint: #F3DCD3;
+
+    --moss: #8CA37E;
+    --moss-deep: #5F7350;
+    --moss-tint: #E2E9D8;
+
+    --ochre: #D3A24E;
+    --ochre-deep: #AD7E33;
+    --ochre-tint: #F1E3C0;
+
+    --shadow: rgba(43, 36, 26, 0.14);
+    --shadow-strong: rgba(43, 36, 26, 0.22);
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -9,13 +35,13 @@ html {
 }
 
 header {
-    background-color: #e4daf5;
+    background-color: var(--header-bg);
 
     position:fixed;
     top: 0;
     left: 0;
     width: 100%;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    box-shadow: 0 2px 5px var(--shadow);
     z-index: 1000;
 
     padding: 5px;
@@ -25,7 +51,7 @@ header {
     display:flex;
     justify-content: center;
     align-items: center;
-    
+
     max-width: 60vw;
     margin: 0 auto;
 }
@@ -43,14 +69,15 @@ header {
 
 .nav_links a {
     text-decoration: none;
-    color: black;
+    color: var(--ink);
     font-weight: 700;
+    letter-spacing: 0.02em;
     transition: 0.3s;
     position: relative;
 }
 
 .nav_links a:hover {
-    color: #7a34f3;
+    color: var(--rose-deep);
 }
 
 .nav_links a::after {
@@ -63,7 +90,7 @@ header {
     bottom: -5px;
     left: 0;
 
-    background: #7a34f3;
+    background: var(--rose-deep);
 
     transition: 0.3s;
 }
@@ -75,8 +102,8 @@ header {
 
 .login_btn {
     font-size: 17px;
-    color: black;
-    background-color: purple;
+    color: var(--ink);
+    background-color: var(--rose);
     border-radius: 20px;
 
     padding-right: 10px;
@@ -89,7 +116,7 @@ header {
 
 main {
     margin-top: 60px;
-    background-color: #F5F5F5;
+    background-color: var(--bone);
 }
 
 section {
@@ -115,25 +142,27 @@ section {
 }
 
 h1 {
-    font-family: 'Amatic SC', sans-serif;
+    font-family: 'Instrument Serif', serif;
     font-size: 5em;
-    font-weight: 800;
-    color: purple;
+    font-weight: 400;
+    letter-spacing: 0.01em;
+    color: var(--ink);
     text-align: center;
 }
 
 h2 {
-    font-family: 'Amatic SC', sans-serif;
+    font-family: 'Instrument Serif', serif;
     font-size: 4em;
-    font-weight: 800;
-    color: purple;
+    font-weight: 400;
+    letter-spacing: 0.01em;
+    color: var(--ink);
 }
 
 h3 {
-    font-family: 'Amatic SC', sans-serif;
+    font-family: 'Instrument Serif', serif;
     font-size: 2.5em;
-    font-weight: 800;
-    color: purple;
+    font-weight: 400;
+    color: var(--ink);
 }
 
 p {
@@ -143,13 +172,13 @@ p {
 
     text-decoration: none;
     font-size: 20px;
-    color: black;
+    color: var(--ink-soft);
     line-height: 1.5;
     max-width: 800px;
 }
 
 a {
-    color: #AEE4F5;
+    color: var(--rose-deep);
     text-decoration: none;
 }
 
@@ -164,13 +193,13 @@ img:hover {
     height: auto;
 
     border-radius: 15px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.39);
+    box-shadow: 0 4px 8px var(--shadow-strong);
 }
 
 button {
     font-size: 16px;
-    color: black;
-    background-color: purple;
+    color: #FFFDF8;
+    background-color: var(--rose);
     border-color: rgb(165, 221, 238, 0);
     border-radius: 20px;
     padding: 10px;
@@ -179,13 +208,14 @@ button {
 button:hover {
     transition: all 0.3s ease;
     cursor: pointer;
-    transform: scale(1.05);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 14px var(--shadow-strong);
 }
 
 .display_img_text {
     display: flex;
     align-items: center;
-    
+
     gap: 50px;
     padding-top: 30px;
 }
@@ -197,10 +227,27 @@ button:hover {
 }
 
 footer {
-    background-color: #e4daf5;
+    position: relative;
+    background-color: var(--header-bg);
     padding: 20px;
     padding-left: 30px;
     padding-right: 30px;
+}
+
+footer::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background-image: repeating-linear-gradient(
+        to right,
+        rgba(46, 40, 34, 0.32) 0,
+        rgba(46, 40, 34, 0.32) 1px,
+        transparent 1px,
+        transparent 26px
+    );
 }
 
 .footer_content {
