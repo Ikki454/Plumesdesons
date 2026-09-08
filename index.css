@@ -1,7 +1,7 @@
 .section_accueil {
     background-image: url('images/baniere_site2.webp');
     background-size: cover;
-    max-width: 100vw;
+    max-width: 100%;
     height: 90vh;
 }
 
@@ -26,7 +26,7 @@
 }
 
 .section_accueil h1{
-    font-size: 10em;
+    font-size: clamp(2.2rem, 1rem + 8vw, 10em);
     font-weight: 400;
 }
 
@@ -237,6 +237,12 @@
 
     .grid_container {
         grid-template-columns: repeat(1, 1fr);
+        width: 80%;
+    }
+
+    .future_events {
+        box-sizing: border-box;
+        width: 85%;
     }
 }
 
@@ -246,20 +252,51 @@
         align-items: center;
     }
 
-    header {
-        flex-direction: column;
-    }
-
-    .nav_links {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .img{
-        max-width: 100vw;
+    .img{ 
+        max-width: 100%;
     }
 
     p {
         padding: 5px;
+    }
+
+    .section_accueil {
+        height: auto;
+        min-height: 70vh;
+        padding: 40px 0;
+    }
+
+    .grid_container {
+        width: 92%;
+        gap: 30px;
+        margin-top: 30px;
+    }
+
+    .grid_cell {
+        width: 100%;
+        max-width: 350px;
+        height: auto;
+    }
+
+    .grid_cell img {
+        height: 220px;
+        object-fit: cover;
+    }
+
+    .grid_cell_text {
+        height: auto;
+        padding-top: 15px;
+    }
+
+    .future_events {
+        box-sizing: border-box;
+        width: 90%;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+
+    .f_e_info {
+        flex-wrap: wrap;
     }
 }
