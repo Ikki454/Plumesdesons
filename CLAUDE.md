@@ -22,13 +22,16 @@ Chaplin) qui crée des spectacles musicaux et sensoriels pour le très jeune pub
 | `styles.css` | Styles partagés par toutes les pages : header, footer, typographie de base, boutons, `.img`, variables de marque (`:root`) |
 | `nrl.html` / `nrl.css` | Page du spectacle "Noël au rythme des lutins" |
 | `oemm.html` / `oemm.css` | Page du spectacle "Où est ma main" |
-| `login.html` / `login.js` | Page de connexion admin (non liée depuis la nav, lien commenté dans `index.html`) |
 | `script.js` | Charge le contenu depuis **Sanity** (voir plus bas) et génère `.grid_container` (créations) et `.future_events_container` (événements). Retombe sur `data.json` tant que Sanity n'est pas configuré. |
 | `data.json` | Contenu d'origine (créations, événements) — sert de filet de secours à `script.js`, plus la source de vérité une fois Sanity branché. Ne contient plus d'identifiants. |
-| `studio/` | Sanity Studio (schémas `creation` et `event`) — l'espace d'édition du contenu |
-| `migrate-to-sanity.mjs` | Script à lancer une fois pour importer `data.json` dans Sanity |
+| `studio/` | Sanity Studio (schémas `creation` et `event`) — l'espace d'édition du contenu, déployé sur `plumesdesons.sanity.studio` |
 | `PROPOSITION-STOCKAGE-DONNEES.md` | Comparatif des options de stockage envisagées et pourquoi Sanity a été choisi |
 | `images/`, `video/` | Médias du site |
+
+`login.html`, `login.js` et `migrate-to-sanity.mjs` ont été retirés (prototype
+d'admin non fonctionnel et script de migration à usage unique, tous deux
+remplacés par le Sanity Studio ci-dessus) — déplacés dans `a-supprimer/` en
+attendant une suppression définitive par l'utilisateur.
 
 `styles.css` est chargé sur **toutes** les pages avant la feuille de style
 spécifique à la page — les variables et règles de base doivent donc y rester
@@ -73,26 +76,24 @@ couleur hors de cette palette sans raison de marque.
 Le contenu (créations, événements) est géré depuis un **Sanity Studio**
 (dossier `studio/`), plutôt qu'en éditant `data.json` à la main. C'est ce qui
 remplace l'ancien système `login.html`/`login.js` (prototype non fonctionnel,
-identifiants en clair — supprimés de `data.json`).
+identifiants en clair — supprimés de `data.json`, fichiers retirés du projet).
 
 - Schémas : `studio/schemaTypes/creation.js` et `event.js`.
 - Le site (`script.js`) lit le contenu public via l'API CDN de Sanity
   (`https://<projectId>.apicdn.sanity.io/...`), sans authentification requise
   côté site (dataset public en lecture).
-- **État actuel : migration effectuée.** Projet Sanity `0udv7977` (dataset
-  `production`), `SANITY_PROJECT_ID` dans `script.js` et `studio/sanity.config.js`
-  déjà renseigné, les 3 créations et 3 événements de `data.json` sont importés
-  dans Sanity avec leurs images. Le site public lit désormais Sanity en premier
-  et ne retombe sur `data.json` qu'en cas d'indisponibilité de Sanity.
-- Seule étape restante : publier le Studio pour que Nathalie & Nathalie puissent
-  éditer le contenu. Depuis un terminal réel (pas depuis un environnement Claude
-  sandboxé, qui n'a pas accès réseau à sanity.io) : `cd studio && npm install`
-  puis `npm run deploy` (choisir un nom d'hébergement Studio si demandé, ex.
-  `plumesdesons`). L'URL du Studio est alors `https://<nom-choisi>.sanity.studio`.
+- **État actuel : migration effectuée et Studio déployé.** Projet Sanity
+  `0udv7977` (dataset `production`), `SANITY_PROJECT_ID` dans `script.js` et
+  `studio/sanity.config.js` déjà renseigné, les 3 créations et 3 événements de
+  `data.json` sont importés dans Sanity avec leurs images. Le site public lit
+  désormais Sanity en premier et ne retombe sur `data.json` qu'en cas
+  d'indisponibilité de Sanity.
+- Studio déployé sur **https://plumesdesons.sanity.studio**.
 - Édition du contenu au quotidien : Nathalie & Nathalie se connectent au
-  Studio déployé (URL obtenue après `npm run deploy`) avec un compte Sanity
-  (à inviter depuis sanity.io/manage → Plumedesons → Members) — plus besoin
-  du login maison.
+  Studio (https://plumesdesons.sanity.studio) avec un compte Sanity (à inviter
+  depuis sanity.io/manage → Plumedesons → Members) — plus besoin du login
+  maison. Pour republier le Studio après un changement de schéma :
+  `cd studio && npm run deploy`.
 
 ## Règles pour les prochaines sessions
 
@@ -105,6 +106,5 @@ identifiants en clair — supprimés de `data.json`).
   `.grid_container`, `.future_events_container`, `.event` + index, etc.
 - Respecter les deux points de rupture responsive déjà en place : `1400px` et
   `768px`.
-- `login.html` est un outil admin interne à part (styles inline, non rattaché à
-  la charte publique) — ne pas le restyler par réflexe en même temps que le
-  reste du site.
+- `login.html`/`login.js` ont été retirés du projet (voir section Sanity CMS
+  ci-dessus) — ne pas les recréer sans demande explicite.
