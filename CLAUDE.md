@@ -28,10 +28,9 @@ Chaplin) qui crée des spectacles musicaux et sensoriels pour le très jeune pub
 | `PROPOSITION-STOCKAGE-DONNEES.md` | Comparatif des options de stockage envisagées et pourquoi Sanity a été choisi |
 | `images/`, `video/` | Médias du site |
 
-`login.html`, `login.js` et `migrate-to-sanity.mjs` ont été retirés (prototype
-d'admin non fonctionnel et script de migration à usage unique, tous deux
-remplacés par le Sanity Studio ci-dessus) — déplacés dans `a-supprimer/` en
-attendant une suppression définitive par l'utilisateur.
+`login.html`, `login.js` et `migrate-to-sanity.mjs` ont été supprimés du
+projet (prototype d'admin non fonctionnel et script de migration à usage
+unique, tous deux remplacés par le Sanity Studio ci-dessus).
 
 `styles.css` est chargé sur **toutes** les pages avant la feuille de style
 spécifique à la page — les variables et règles de base doivent donc y rester
